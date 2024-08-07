@@ -8,6 +8,8 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 
+export const runtime = "edge";
+
 export default function Livescore() {
 	return (
 		<>
