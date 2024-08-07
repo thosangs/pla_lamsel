@@ -1,4 +1,7 @@
+"use client";
+
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Suspense } from "react";
 import {
 	IconFaceWomanShimmer,
 	IconFaceManShimmer,
@@ -6,9 +9,13 @@ import {
 } from "@/components/ui/icons";
 import Link from "next/link";
 
-export default function Livescore() {
+function LivescoreFallback() {
+	return <>placeholder</>;
+}
+
+function LivescoreActive() {
 	return (
-		<div className="max-w-6xl grid gap-6">
+		<div className="max-w-6xl grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 py-8">
 			<Card>
 				<CardHeader className="bg-muted rounded-sm">
 					<CardTitle>2020</CardTitle>
@@ -17,7 +24,7 @@ export default function Livescore() {
 					<div className="flex-1">
 						<div className="flex justify-center mt-4">
 							<Link
-								href="/livescore/2020/girl"
+								href="/livescore/kelas?tahun=2020&tipe=girl"
 								className="inline-flex h-12 items-center justify-center rounded-md bg-[#FF69B4] px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-[#FF69B4]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
 								prefetch={false}
 							>
@@ -29,7 +36,7 @@ export default function Livescore() {
 					<div className="flex-1">
 						<div className="flex justify-center mt-4">
 							<Link
-								href="/livescore/2020/boy"
+								href="/livescore/kelas?tahun=2020&tipe=boy"
 								className="inline-flex h-12 items-center justify-center rounded-md bg-[#1E90FF] px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-[#1E90FF]/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
 								prefetch={false}
 							>
@@ -90,5 +97,13 @@ export default function Livescore() {
 				</CardContent>
 			</Card>
 		</div>
+	);
+}
+
+export default function Livescore() {
+	return (
+		<Suspense fallback={<LivescoreFallback />}>
+			<LivescoreActive />
+		</Suspense>
 	);
 }

@@ -17,18 +17,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html suppressHydrationWarning lang="en">
 			<body className={inter.className}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<div className="flex flex-col min-h-screen bg-gradient-to-b from-primary to-primary-foreground">
 						<Header />
 
-						<main className="flex-1 flex flex-col items-center justify-center px-4 py-8">
+						<main className="flex-1 flex flex-col items-center justify-center p-2">
 							{children}
 						</main>
 

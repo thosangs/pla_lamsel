@@ -1,3 +1,6 @@
+"use client";
+
+import { Suspense } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
 	Table,
@@ -7,13 +10,19 @@ import {
 	TableBody,
 	TableCell,
 } from "@/components/ui/table";
+import { useSearchParams } from "next/navigation";
 
-export const runtime = "edge";
+function KelasFallback() {
+	return <>placeholder</>;
+}
 
-export default function Livescore() {
+function KelasActive() {
+	const searchParams = useSearchParams();
+	const tahun = searchParams.get("tahun");
+	const tipe = searchParams.get("tipe");
 	return (
 		<>
-			<Card className="p-1 m-2 container">
+			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Bracket 1</CardTitle>
 				</CardHeader>
@@ -86,7 +95,7 @@ export default function Livescore() {
 					</Table>
 				</CardContent>
 			</Card>
-			<Card className="p-1 m-2 container">
+			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Bracket 2</CardTitle>
 				</CardHeader>
@@ -159,7 +168,7 @@ export default function Livescore() {
 					</Table>
 				</CardContent>
 			</Card>
-			<Card className="p-1 m-2 container">
+			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Semifinal 1</CardTitle>
 				</CardHeader>
@@ -208,7 +217,7 @@ export default function Livescore() {
 					</Table>
 				</CardContent>
 			</Card>
-			<Card className="p-1 m-2 container">
+			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Semifinal 2</CardTitle>
 				</CardHeader>
@@ -257,7 +266,7 @@ export default function Livescore() {
 					</Table>
 				</CardContent>
 			</Card>
-			<Card className="p-1 m-2 container">
+			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Novice Final</CardTitle>
 				</CardHeader>
@@ -306,7 +315,7 @@ export default function Livescore() {
 					</Table>
 				</CardContent>
 			</Card>
-			<Card className="p-1 m-2 container">
+			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Main Final</CardTitle>
 				</CardHeader>
@@ -356,5 +365,13 @@ export default function Livescore() {
 				</CardContent>
 			</Card>
 		</>
+	);
+}
+
+export default function Kelas() {
+	return (
+		<Suspense fallback={<KelasFallback />}>
+			<KelasActive />
+		</Suspense>
 	);
 }

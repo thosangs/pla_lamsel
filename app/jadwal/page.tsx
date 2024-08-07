@@ -1,6 +1,6 @@
 export default function Jadwal() {
 	return (
-		<div className="w-full max-w-4xl bg-background rounded-lg shadow-lg p-6">
+		<div className="w-full max-w-4xl bg-background rounded-lg shadow-lg p-4 my-4">
 			<h2 className="text-2xl font-bold text-primary mb-4">Schedule</h2>
 			<div className="overflow-x-auto">
 				<table className="w-full text-muted-foreground">

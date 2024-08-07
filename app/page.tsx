@@ -11,8 +11,7 @@ export default function Home() {
 	return (
 		<>
 			<IconBikeFast className="w-32 h-auto text-background p-4" />
-
-			<nav className="w-full max-w-md grid gap-4">
+			<nav className="w-full max-w-md grid gap-4 px-4">
 				<Link
 					href="/peraturan"
 					className="bg-background text-muted-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
