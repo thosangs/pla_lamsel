@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Peraturan() {
 	return (
 		<div className="w-full max-w-md bg-background rounded-lg shadow-lg p-6">
 			<h2 className="text-2xl font-bold text-primary mb-4">Rules</h2>
