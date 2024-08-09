@@ -11,9 +11,11 @@ import {
 	TableCell,
 } from "@/components/ui/table";
 import { useSearchParams } from "next/navigation";
+import { LoadingSpinner } from "@/components/ui/icons";
+import Image from "next/image";
 
 function KelasFallback() {
-	return <>placeholder</>;
+	return <LoadingSpinner />;
 }
 
 function KelasActive() {
@@ -22,6 +24,24 @@ function KelasActive() {
 	const tipe = searchParams.get("tipe");
 	return (
 		<>
+			<div className="my-2">
+				<hr />
+				<span className="inline-block font-bold text-background text-3xl align-middle">
+					{tipe?.toUpperCase()}
+				</span>
+				<Image
+					src="/icon.png"
+					width={40}
+					height={0}
+					className="my-0 py-2 mx-2 inline-block"
+					alt="racephoria"
+				/>
+				<span className="inline-block font-bold text-background text-3xl align-middle">
+					{tahun?.toUpperCase()}
+				</span>
+				<hr />
+			</div>
+
 			<Card className="container w-full p-1 my-2 mx-1">
 				<CardHeader className="bg-muted">
 					<CardTitle>Bracket 1</CardTitle>

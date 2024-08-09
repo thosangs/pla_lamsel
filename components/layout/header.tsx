@@ -3,22 +3,24 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import {
-	IconBikeFast,
-	IconMoonStarsFill,
-	IconSunFill,
-} from "@/components/ui/icons";
+import { IconMoonStarsFill, IconSunFill } from "@/components/ui/icons";
+import Image from "next/image";
 
 export default function Header() {
 	const { setTheme } = useTheme();
 
 	return (
-		<header className="sticky top-0 bg-primary-foreground py-4 px-6 sm:px-16 flex items-center justify-between z-40 opacity-95">
+		<header className="sticky top-0 bg-primary-foreground py-3 px-6 sm:px-16 flex items-center justify-between z-40 opacity-95">
 			<Link href="/" prefetch={true}>
 				<div className="flex items-center gap-2">
 					<h1 className="text-xl font-bold text-secondary-foreground">
-						<span>PLA Lamsel</span>
-						<IconBikeFast className="inline" />
+						<Image
+							src="/text.png"
+							width={90}
+							height={0}
+							className="m-0 p-0"
+							alt="racephoria"
+						/>
 					</h1>
 				</div>
 			</Link>

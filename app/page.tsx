@@ -3,18 +3,24 @@ import {
 	IconFlagCheckered,
 	CalendarIcon,
 	ChevronRightIcon,
-	IconBikeFast,
 	BookIcon,
 } from "@/components/ui/icons";
+import Image from "next/image";
 
 export default function Home() {
 	return (
 		<>
-			<IconBikeFast className="w-32 h-auto text-background p-4" />
-			<nav className="w-full max-w-md grid gap-4 px-4">
+			<Image
+				src="/logo-text.png"
+				width={150}
+				height={0}
+				className="m-0 pb-2"
+				alt="racephoria"
+			/>
+			<nav className="w-full max-w-md grid gap-2 px-4">
 				<Link
 					href="/peraturan"
-					className="bg-background text-muted-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+					className="bg-background text-secondary-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 					prefetch={false}
 				>
 					<div className="flex items-center gap-2">
@@ -25,7 +31,7 @@ export default function Home() {
 				</Link>
 				<Link
 					href="/livescore"
-					className="bg-background text-muted-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+					className="bg-background text-secondary-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 					prefetch={true}
 				>
 					<div className="flex items-center gap-2">
@@ -36,7 +42,7 @@ export default function Home() {
 				</Link>
 				<Link
 					href="/jadwal"
-					className="bg-background text-muted-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+					className="bg-background text-secondary-foreground rounded-lg p-4 flex items-center justify-between hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 					prefetch={false}
 				>
 					<div className="flex items-center gap-2">

@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://racephoria.pages.dev"),
 	title: "PLA Lamsel",
 	description: "Pushbike Lampung Academy | Lampung Selatan",
 };

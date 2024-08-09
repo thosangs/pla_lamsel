@@ -1,3 +1,5 @@
+import listJadwal from "@/lib/jadwal";
+
 export default function Jadwal() {
 	return (
 		<div className="w-full max-w-4xl bg-background rounded-lg shadow-lg p-4 my-4">
@@ -12,31 +14,13 @@ export default function Jadwal() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className="border-b">
-							<td className="p-4">Race 1 - Daytona</td>
-							<td className="p-4">June 1, 2024 - 3:00 PM</td>
-							<td className="p-4">Tentative</td>
-						</tr>
-						<tr className="border-b">
-							<td className="p-4">Race 2 - Talladega</td>
-							<td className="p-4">July 15, 2024 - 4:30 PM</td>
-							<td className="p-4">Confirmed</td>
-						</tr>
-						<tr className="border-b">
-							<td className="p-4">Race 3 - Sonoma</td>
-							<td className="p-4">August 20, 2024 - 2:00 PM</td>
-							<td className="p-4">Tentative</td>
-						</tr>
-						<tr className="border-b">
-							<td className="p-4">Race 4 - Watkins Glen</td>
-							<td className="p-4">September 5, 2024 - 3:30 PM</td>
-							<td className="p-4">Confirmed</td>
-						</tr>
-						<tr className="border-b">
-							<td className="p-4">Race 5 - Homestead</td>
-							<td className="p-4">October 12, 2024 - 4:00 PM</td>
-							<td className="p-4">Tentative</td>
-						</tr>
+						{listJadwal.map((event, index) => (
+							<tr className="border-b" key={index}>
+								<td className="p-4">{event.details}</td>
+								<td className="p-4">{event.time}</td>
+								<td className="p-4">{event.note}</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 			</div>
