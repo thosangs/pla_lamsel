@@ -13,6 +13,7 @@ import {
 import { useSearchParams } from "next/navigation";
 import { LoadingSpinner } from "@/components/ui/icons";
 import Image from "next/image";
+import icon_image from "@/public/icon.png";
 
 function KelasFallback() {
 	return <LoadingSpinner />;
@@ -24,21 +25,22 @@ function KelasActive() {
 	const tipe = searchParams.get("tipe");
 	return (
 		<>
-			<div className="my-2">
+			<div className="my-2 mx-auto">
 				<hr />
-				<span className="inline-block font-bold text-background text-3xl align-middle">
-					{tipe?.toUpperCase()}
-				</span>
-				<Image
-					src="/icon.png"
-					width={40}
-					height={0}
-					className="my-0 py-2 mx-2 inline-block"
-					alt="racephoria"
-				/>
-				<span className="inline-block font-bold text-background text-3xl align-middle">
-					{tahun?.toUpperCase()}
-				</span>
+				<div className="text-center">
+					<span className="inline-block font-bold text-background text-3xl align-middle">
+						{tipe?.toUpperCase()}
+					</span>
+					<Image
+						src={icon_image}
+						placeholder="blur"
+						className="my-0 py-2 mx-2 inline-block w-2/12"
+						alt="racephoria"
+					/>
+					<span className="inline-block font-bold text-background text-3xl align-middle">
+						{tahun?.toUpperCase()}
+					</span>
+				</div>
 				<hr />
 			</div>
 

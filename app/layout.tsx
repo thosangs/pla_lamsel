@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme-providers";
 import Link from "next/link";
+import Footer from "@/components/layout/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,18 +31,7 @@ export default function RootLayout({
 							{children}
 						</main>
 
-						<footer className="sticky bottom-0 bg-primary-foreground py-2 px-6 text-center text-sm text-secondary-foreground">
-							&copy; 2024 Built by{" "}
-							<Link
-								href="https://www.instagram.com/tukang.data/"
-								className="font-bold text-primary"
-								target="_blank"
-								prefetch={false}
-							>
-								tukang_data
-							</Link>
-							.
-						</footer>
+						<Footer />
 					</div>
 				</ThemeProvider>
 			</body>

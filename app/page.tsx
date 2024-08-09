@@ -6,15 +6,17 @@ import {
 	BookIcon,
 } from "@/components/ui/icons";
 import Image from "next/image";
+import logo_text_image from "@/public/logo-text.png";
 
 export default function Home() {
 	return (
 		<>
 			<Image
-				src="/logo-text.png"
-				width={150}
-				height={0}
-				className="m-0 pb-2"
+				src={logo_text_image}
+				// width={150}
+				// height={0}
+				placeholder="blur"
+				className="m-0 pb-2 w-auto"
 				alt="racephoria"
 			/>
 			<nav className="w-full max-w-md grid gap-2 px-4">
