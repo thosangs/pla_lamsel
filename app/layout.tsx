@@ -8,8 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://racephoria.pages.dev"),
-	title: "PLA Lamsel",
-	description: "Pushbike Lampung Academy | Lampung Selatan",
+	title: "X-Anda | Racephoria",
+	description:
+		"X-Anda | Racephoria by Pushbike Lampung Academy ~ Lampung Selatan",
 };
 
 export default function RootLayout({
