@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme-providers";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +30,17 @@ export default function RootLayout({
 							{children}
 						</main>
 
-						<footer className="bg-primary-foreground py-4 px-6 text-center text-sm text-secondary-foreground">
-							&copy; 2024 Built by thosangs.
+						<footer className="sticky bottom-0 bg-primary-foreground py-2 px-6 text-center text-sm text-secondary-foreground">
+							&copy; 2024 Built by{" "}
+							<Link
+								href="https://www.instagram.com/tukang.data/"
+								className="font-bold text-primary"
+								target="_blank"
+								prefetch={false}
+							>
+								tukang_data
+							</Link>
+							.
 						</footer>
 					</div>
 				</ThemeProvider>
