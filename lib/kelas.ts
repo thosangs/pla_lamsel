@@ -23,7 +23,7 @@ export const ranges: Dictionary = {
 		},
 	},
 	"2021": {
-		boy: {
+		girl: {
 			"Batch 1": "2021 (Simulasi)!I3:P9",
 			"Batch 2": "2021 (Simulasi)!I11:P17",
 			"Batch 3": "2021 (Simulasi)!I19:P25",
@@ -32,7 +32,7 @@ export const ranges: Dictionary = {
 			"Final Novice": "2021 (Simulasi)!R19:T25",
 			"Final Utama": "2021 (Simulasi)!R27:T33",
 		},
-		girl: {
+		boy: {
 			"Batch 1": "2021 (Simulasi)!I36:P42",
 			"Batch 2": "2021 (Simulasi)!I44:P50",
 			"Batch 3": "2021 (Simulasi)!I52:P58",
@@ -43,7 +43,7 @@ export const ranges: Dictionary = {
 		},
 	},
 	"2020": {
-		boy: {
+		girl: {
 			"Batch 1": "2020 (Simulasi)!I3:P9",
 			"Batch 2": "2020 (Simulasi)!I11:P17",
 			"Batch 3": "2020 (Simulasi)!I19:P25",
@@ -52,7 +52,7 @@ export const ranges: Dictionary = {
 			"Final Novice": "2020 (Simulasi)!R19:T25",
 			"Final Utama": "2020 (Simulasi)!R27:T33",
 		},
-		girl: {
+		boy: {
 			"Batch 1": "2020 (Simulasi)!I36:P42",
 			"Batch 2": "2020 (Simulasi)!I44:P50",
 			"Batch 3": "2020 (Simulasi)!I52:P58",
@@ -63,7 +63,7 @@ export const ranges: Dictionary = {
 		},
 	},
 	"2019": {
-		boy: {
+		girl: {
 			"Batch 1": "2019 (Simulasi)!I3:P9",
 			"Batch 2": "2019 (Simulasi)!I11:P17",
 			"Batch 3": "2019 (Simulasi)!I19:P25",
@@ -72,7 +72,7 @@ export const ranges: Dictionary = {
 			"Final Novice": "2019 (Simulasi)!R19:T25",
 			"Final Utama": "2019 (Simulasi)!R27:T33",
 		},
-		girl: {
+		boy: {
 			"Batch 1": "2019 (Simulasi)!I36:P42",
 			"Batch 2": "2019 (Simulasi)!I44:P50",
 			"Final Novice": "2019 (Simulasi)!R36:T42",
@@ -80,34 +80,34 @@ export const ranges: Dictionary = {
 		},
 	},
 	"2018": {
-		boy: {
+		girl: {
 			Final: "2018 (Simulasi)!I3:R9",
 		},
-		girl: {
+		boy: {
 			Final: "2018 (Simulasi)!I12:R18",
 		},
 	},
 	"2017": {
-		boy: {
+		girl: {
 			Final: "2017 (Simulasi)!I3:R9",
 		},
-		girl: {
+		boy: {
 			Final: "2017 (Simulasi)!I12:R18",
 		},
 	},
 	"2016": {
-		boy: {
+		girl: {
 			Final: "2016 (Simulasi)!I3:R9",
 		},
-		girl: {
+		boy: {
 			Final: "2016 (Simulasi)!I12:R18",
 		},
 	},
 	FFA: {
-		boy: {
+		girl: {
 			Final: "2016 (Simulasi)!I3:R9",
 		},
-		girl: {
+		boy: {
 			Final: "2016 (Simulasi)!I12:R18",
 		},
 	},

@@ -13,8 +13,6 @@ export default function Home() {
 		<>
 			<Image
 				src={logo_text_image}
-				// width={150}
-				// height={0}
 				placeholder="blur"
 				className="m-0 pb-2 w-auto"
 				alt="racephoria"
