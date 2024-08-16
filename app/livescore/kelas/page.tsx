@@ -89,15 +89,26 @@ function KelasActive() {
 					<TableHeader className="bg-muted">
 						<TableRow>
 							{modifyTableHeaders(rows[0]).map((header, index) => (
-								<TableHead key={index}>{header}</TableHead>
+								<TableHead key={index} className="text-center">
+									{header}
+								</TableHead>
 							))}
 						</TableRow>
 					</TableHeader>
 					<TableBody>
 						{rows.slice(1).map((row, rowIndex) => (
-							<TableRow key={rowIndex}>
+							<TableRow key={rowIndex} className="p-0 text-center">
 								{row.map((cell, cellIndex) => (
-									<TableCell key={cellIndex}>{cell}</TableCell>
+									<TableCell
+										key={cellIndex}
+										className={`p-2 ${
+											rows[0][cellIndex] === "NAMA" || rows[0][cellIndex] === "KOMUNITAS"
+												? "whitespace-nowrap"
+												: ""
+										}`}
+									>
+										{cell}
+									</TableCell>
 								))}
 							</TableRow>
 						))}
@@ -127,10 +138,11 @@ function KelasActive() {
 				</div>
 				<hr />
 			</div>
-
-			{Object.entries(data[tahun][tipe]).map(([bracketTitle, rows]) =>
-				renderTable(bracketTitle, rows as string[][])
-			)}
+			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+				{Object.entries(data[tahun][tipe]).map(([bracketTitle, rows]) =>
+					renderTable(bracketTitle, rows as string[][])
+				)}
+			</div>
 		</>
 	);
 }
