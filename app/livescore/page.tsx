@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import {
 	IconFaceWomanShimmer,
 	IconFaceManShimmer,
-	TrophyIcon,
+	IconBaby,
 	LoadingSpinner,
 } from "@/components/ui/icons";
 import Link from "next/link";
@@ -20,7 +20,7 @@ const typeStyles = {
 const typeIcons = {
 	boy: <IconFaceManShimmer className="w-6 h-6 mr-2" />,
 	girl: <IconFaceWomanShimmer className="w-6 h-6 mr-2" />,
-	mix: <TrophyIcon className="w-6 h-6 mr-2" />,
+	mix: <IconBaby className="w-6 h-6 mr-2" />,
 };
 
 function LivescoreFallback() {
@@ -37,7 +37,6 @@ function LivescoreActive() {
 					</CardHeader>
 					<CardContent className="flex gap-4">
 						{Object.entries(ranges[year]).map(([type, values]) => {
-							// Type assertion to inform TypeScript that `type` is of type `EventType`
 							const eventType = type as YearType;
 							return (
 								<div className="flex-1" key={eventType}>
@@ -46,7 +45,7 @@ function LivescoreActive() {
 											href={`/livescore/kelas?tahun=${year}&tipe=${eventType}`}
 											className={cn(
 												"inline-flex h-12 items-center justify-center rounded-md px-8 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-												typeStyles[eventType] // Use eventType here
+												typeStyles[eventType]
 											)}
 											prefetch={false}
 										>
