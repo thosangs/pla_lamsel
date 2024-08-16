@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ranges } from "@/lib/kelas";
 
+export const runtime = "edge";
+
 export async function GET(req: NextRequest) {
 	const { searchParams } = new URL(req.url);
 	const year = searchParams.get("tahun") || "";
