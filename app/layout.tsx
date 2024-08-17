@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	metadataBase: new URL("https://racephoria.pages.dev"),
 	title: "X-Anda | Racephoria",
+	verification: {
+		google: process.env.GOOGLE_VERIFICATION || "",
+	},
 	description:
 		"X-Anda | Racephoria by Pushbike Lampung Academy ~ Lampung Selatan",
 };
