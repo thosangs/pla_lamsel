@@ -8,10 +8,18 @@ export async function GET(req: NextRequest) {
 	const year = searchParams.get("tahun") || "";
 	const type = searchParams.get("tipe") as YearType;
 
-	// Ensure year and type are provided
-	if (!year || !type) {
+	// Validate that the year exists in the ranges
+	if (!year || !(year in ranges)) {
 		return NextResponse.json(
-			{ error: "Missing year or type parameter" },
+			{ error: "Invalid or missing parameter" },
+			{ status: 400 }
+		);
+	}
+
+	// Validate that the type exists in the ranges[year]
+	if (!type || !(type in ranges[year])) {
+		return NextResponse.json(
+			{ error: "Invalid or missing parameter" },
 			{ status: 400 }
 		);
 	}

@@ -34,7 +34,9 @@ function modifyTableHeaders(headers: string[]): string[] {
 }
 
 function KelasFallback() {
-	return <LoadingSpinner className="text-5xl h-16 w-auto animate-spin" />;
+	return (
+		<LoadingSpinner className="text-5xl h-16 w-auto animate-spin my-auto" />
+	);
 }
 
 function KelasActive() {
@@ -72,11 +74,34 @@ function KelasActive() {
 	}
 
 	if (error) {
-		return <div>Error: {error.message}</div>;
+		return (
+			<div className="my-auto">
+				<div className="text-4xl text-center">Whoopsie!</div>
+				<div className="text-center">I know what you do 🚧</div>
+			</div>
+		);
 	}
 
 	if (!data) {
-		return <div>No data available</div>;
+		return (
+			<div className="my-auto">
+				<div className="text-4xl text-center">Whoopsie!</div>
+				<div className="text-center">No data so far ❌</div>
+			</div>
+		);
+	}
+
+	function getEmoji(rankCell: string): any {
+		switch (rankCell) {
+			case "1":
+				return "🥇";
+			case "2":
+				return "🥈";
+			case "3":
+				return "🥉";
+			default:
+				return rankCell;
+		}
 	}
 
 	const renderTable = (bracketTitle: string, rows: string[][]) => (
@@ -105,9 +130,24 @@ function KelasActive() {
 											rows[0][cellIndex] === "NAMA" || rows[0][cellIndex] === "KOMUNITAS"
 												? "whitespace-nowrap"
 												: ""
-										}`}
+										}
+										${
+											rows[0][cellIndex] === "POIN" ||
+											rows[0][cellIndex] === "RANK" ||
+											rows[0][cellIndex] === "POSISI"
+												? "text-primary font-bold"
+												: ""
+										}
+										`}
 									>
-										{cell}
+										{bracketTitle.toLowerCase().startsWith("final") &&
+										rows[0][cellIndex].toUpperCase() === "POSISI" ? (
+											<span className={`${parseInt(cell) > 3 ? "" : "text-3xl"}`}>
+												{getEmoji(cell.toString())}
+											</span>
+										) : (
+											cell
+										)}
 									</TableCell>
 								))}
 							</TableRow>
@@ -133,12 +173,18 @@ function KelasActive() {
 						alt="racephoria"
 					/>
 					<span className="inline-block font-bold text-background text-3xl align-middle">
-						{tahun?.toUpperCase()}
+						{tahun?.toUpperCase().startsWith("FFA") ? "FFA" : tahun?.toUpperCase()}
 					</span>
 				</div>
 				<hr />
 			</div>
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			<div
+				className={`${
+					Object.keys(data[tahun][tipe]).length === 1
+						? "flex flex-cols w-full sm:w-auto mr-1"
+						: "grid grid-cols-1 sm:grid-cols-2 sm:gap-5 justify-center mr-1"
+				}`}
+			>
 				{Object.entries(data[tahun][tipe]).map(([bracketTitle, rows]) =>
 					renderTable(bracketTitle, rows as string[][])
 				)}
