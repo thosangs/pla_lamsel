@@ -32,7 +32,6 @@ export async function GET(req: NextRequest) {
 		},
 	};
 	try {
-		// Fetch data from the Google Apps Script API with JSON payload
 		const response = await fetch(apiUrl!, {
 			method: "POST",
 			headers: {
@@ -72,10 +71,8 @@ export async function GET(req: NextRequest) {
 			}
 		}
 
-		// Return the data as JSON
 		return NextResponse.json(data, { status: 200 });
 	} catch (error: any) {
-		// Handle any errors that occur during the fetch
 		return NextResponse.json({ error: error.message }, { status: 500 });
 	}
 }

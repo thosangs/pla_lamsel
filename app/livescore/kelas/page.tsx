@@ -33,11 +33,78 @@ function modifyTableHeaders(headers: string[]): string[] {
 	});
 }
 
+function getEmoji(rankCell: string): any {
+	switch (rankCell) {
+		case "1":
+			return "🥇";
+		case "2":
+			return "🥈";
+		case "3":
+			return "🥉";
+		default:
+			return rankCell;
+	}
+}
+
 function KelasFallback() {
 	return (
 		<LoadingSpinner className="text-5xl h-16 w-auto animate-spin my-auto" />
 	);
 }
+
+const renderTable = (bracketTitle: string, rows: string[][]) => (
+	<Card key={bracketTitle} className="container w-full p-1 my-2 mx-1">
+		<CardHeader className="bg-muted">
+			<CardTitle>{bracketTitle}</CardTitle>
+		</CardHeader>
+		<CardContent className="p-0 overflow-x-auto">
+			<Table>
+				<TableHeader className="bg-muted">
+					<TableRow>
+						{modifyTableHeaders(rows[0]).map((header, index) => (
+							<TableHead key={index} className="text-center">
+								{header}
+							</TableHead>
+						))}
+					</TableRow>
+				</TableHeader>
+				<TableBody>
+					{rows.slice(1).map((row, rowIndex) => (
+						<TableRow key={rowIndex} className="p-0 text-center">
+							{row.map((cell, cellIndex) => (
+								<TableCell
+									key={cellIndex}
+									className={`p-2 ${
+										rows[0][cellIndex] === "NAMA" || rows[0][cellIndex] === "KOMUNITAS"
+											? "whitespace-nowrap"
+											: ""
+									}
+									${
+										rows[0][cellIndex] === "POIN" ||
+										rows[0][cellIndex] === "RANK" ||
+										rows[0][cellIndex] === "POSISI"
+											? "text-primary font-bold"
+											: ""
+									}
+									`}
+								>
+									{bracketTitle.toLowerCase().startsWith("final") &&
+									rows[0][cellIndex].toUpperCase() === "POSISI" ? (
+										<span className={`${parseInt(cell) > 3 ? "" : "text-3xl"}`}>
+											{getEmoji(cell.toString())}
+										</span>
+									) : (
+										cell
+									)}
+								</TableCell>
+							))}
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+		</CardContent>
+	</Card>
+);
 
 function KelasActive() {
 	const searchParams = useSearchParams();
@@ -90,73 +157,6 @@ function KelasActive() {
 			</div>
 		);
 	}
-
-	function getEmoji(rankCell: string): any {
-		switch (rankCell) {
-			case "1":
-				return "🥇";
-			case "2":
-				return "🥈";
-			case "3":
-				return "🥉";
-			default:
-				return rankCell;
-		}
-	}
-
-	const renderTable = (bracketTitle: string, rows: string[][]) => (
-		<Card key={bracketTitle} className="container w-full p-1 my-2 mx-1">
-			<CardHeader className="bg-muted">
-				<CardTitle>{bracketTitle}</CardTitle>
-			</CardHeader>
-			<CardContent className="p-0 overflow-x-auto">
-				<Table>
-					<TableHeader className="bg-muted">
-						<TableRow>
-							{modifyTableHeaders(rows[0]).map((header, index) => (
-								<TableHead key={index} className="text-center">
-									{header}
-								</TableHead>
-							))}
-						</TableRow>
-					</TableHeader>
-					<TableBody>
-						{rows.slice(1).map((row, rowIndex) => (
-							<TableRow key={rowIndex} className="p-0 text-center">
-								{row.map((cell, cellIndex) => (
-									<TableCell
-										key={cellIndex}
-										className={`p-2 ${
-											rows[0][cellIndex] === "NAMA" || rows[0][cellIndex] === "KOMUNITAS"
-												? "whitespace-nowrap"
-												: ""
-										}
-										${
-											rows[0][cellIndex] === "POIN" ||
-											rows[0][cellIndex] === "RANK" ||
-											rows[0][cellIndex] === "POSISI"
-												? "text-primary font-bold"
-												: ""
-										}
-										`}
-									>
-										{bracketTitle.toLowerCase().startsWith("final") &&
-										rows[0][cellIndex].toUpperCase() === "POSISI" ? (
-											<span className={`${parseInt(cell) > 3 ? "" : "text-3xl"}`}>
-												{getEmoji(cell.toString())}
-											</span>
-										) : (
-											cell
-										)}
-									</TableCell>
-								))}
-							</TableRow>
-						))}
-					</TableBody>
-				</Table>
-			</CardContent>
-		</Card>
-	);
 
 	return (
 		<>
