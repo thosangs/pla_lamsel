@@ -11,7 +11,7 @@ export default function Header() {
 	const { setTheme } = useTheme();
 
 	return (
-		<header className="sticky top-0 bg-primary-foreground py-2 px-6 sm:px-16 flex items-center justify-between z-40 opacity-95">
+		<header className="sticky top-0 bg-primary-foreground py-2 px-6 sm:px-16 flex items-center justify-between z-40 backdrop-blur-sm">
 			<Link href="/" prefetch={true}>
 				<div className="flex items-center gap-2">
 					<h1 className="text-xl font-bold text-secondary-foreground">

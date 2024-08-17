@@ -1,4 +1,11 @@
 import rules from "@/lib/peraturan";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "X-Anda Racephoria | Peraturan",
+	description:
+		"Peraturan umum yang wajib diikuti oleh peserta X-Anda | Racephoria by Pushbike Lampung Academy ~ Lampung Selatan",
+};
 
 export default function Peraturan() {
 	return (
