@@ -10,6 +10,13 @@ import {
 	LoadingSpinner,
 } from "@/components/ui/icons";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "X-Anda Racephoria | Livescore",
+	description:
+		"Livescore kompetisi X-Anda | Racephoria by Pushbike Lampung Academy ~ Lampung Selatan",
+};
 
 const typeStyles = {
 	boy: "bg-[#389cff]",
