@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/lib/utils";
 import { orderedYears, ranges } from "@/lib/kelas";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
