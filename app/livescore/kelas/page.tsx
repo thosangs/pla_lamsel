@@ -70,14 +70,14 @@ const renderTable = (bracketTitle: string, rows: string[][]) => (
 				</TableHeader>
 				<TableBody>
 					{rows.slice(1).map((row, rowIndex) => (
-						<TableRow key={rowIndex} className="p-0 text-center">
+						<TableRow key={rowIndex} className="p-0">
 							{row.map((cell, cellIndex) => (
 								<TableCell
 									key={cellIndex}
 									className={`p-2 ${
 										rows[0][cellIndex] === "NAMA" || rows[0][cellIndex] === "KOMUNITAS"
-											? "whitespace-nowrap"
-											: ""
+											? "whitespace-nowrap text-left capitalize"
+											: "text-center capitalize"
 									}
 									${
 										rows[0][cellIndex] === "POIN" ||
@@ -94,7 +94,7 @@ const renderTable = (bracketTitle: string, rows: string[][]) => (
 											{getEmoji(cell.toString())}
 										</span>
 									) : (
-										cell
+										cell.toString().toLocaleUpperCase()
 									)}
 								</TableCell>
 							))}
