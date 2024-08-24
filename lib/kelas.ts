@@ -98,10 +98,10 @@ export const ranges: Dictionary = {
 	},
 	"FFA MAX 2015": {
 		girl: {
-			"Final Utama": "B221:L227",
+			"Final Utama": "B231:L237",
 		},
 		boy: {
-			"Final Utama": "B231:L237",
+			"Final Utama": "B221:L227",
 		},
 	},
 };
