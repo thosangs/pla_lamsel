@@ -35,12 +35,12 @@ const listJadwal = [
 		note: "-",
 	},
 	{
-		details: "2019 GIRL",
+		details: "2019 BOY",
 		time: "11:10 - 11:40",
 		note: "-",
 	},
 	{
-		details: "2019 BOY",
+		details: "2019 GIRL",
 		time: "11:44 - 12:48",
 		note: "-",
 	},
@@ -50,19 +50,19 @@ const listJadwal = [
 		note: "-",
 	},
 	{
-		details: "2018 GIRL",
+		details: "2018 BOY",
 		time: "13:00 - 13:17",
 		note: "-",
 	},
 	{
-		details: "2018 BOY",
+		details: "2018 GIRL, 2017 BOY",
 		time: "13:21 - 13:51",
-		note: "-",
+		note: "Selang-Seling Girl-Boy",
 	},
 	{
-		details: "2017 BOY, FFA GIRL & BOY",
+		details: "FFA BOY & GIRL",
 		time: "13:56 - 14:56",
-		note: "-",
+		note: "Selang-Seling Boy-Girl",
 	},
 ];
 
